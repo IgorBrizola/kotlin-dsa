@@ -38,21 +38,19 @@ class SolutionsLeetCodes {
         return s.substring(start, end + 1)
     }
 
-    fun twoSum(nums: IntArray, target: Int): IntArray {
-        val map = mutableMapOf<Int, Int>()
+    fun twoSum(numbers: IntArray, target: Int): IntArray {
+    val mapNumbers = mutableMapOf<Int, Int>()
 
-        for ((index, num) in nums.withIndex()) {
+        for ((index, number) in numbers.withIndex()) {
+            val complement = target - number
 
-            val complement = target - num
+            if (mapNumbers.containsKey(complement))
+                return intArrayOf(mapNumbers[complement]!!, index)
 
-            if (map.containsKey(complement)) {
-                return intArrayOf(map[complement]!!, index)
-            }
-
-            map[num] = index
+            mapNumbers[number] = index
         }
 
-        throw IllegalArgumentException("No valid solution found.")
+        throw IllegalArgumentException("Target not found!")
     }
-
 }
+
