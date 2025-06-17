@@ -34,10 +34,10 @@ class MainLeetCodesTest {
 
     @Test
     fun `scenery two should return the indices of two number where the result is target`() {
-        val nums = intArrayOf(3,2,3)
-        val target = 6
+        val nums = intArrayOf(2,3,5,10)
+        val target = 13
 
-        val expected = intArrayOf(0,2)
+        val expected = intArrayOf(1,3)
 
         val result = leetCodes.twoSum(nums, target)
 
@@ -46,10 +46,10 @@ class MainLeetCodesTest {
 
     @Test
     fun `scenery three should return the indices of two number where the result is target`() {
-        val nums = intArrayOf(3,3)
-        val target = 6
+        val nums = intArrayOf(3,2,4)
+        val target = 7
 
-        val expected = intArrayOf(0,1)
+        val expected = intArrayOf(0,2)
 
         val result = leetCodes.twoSum(nums, target)
 
