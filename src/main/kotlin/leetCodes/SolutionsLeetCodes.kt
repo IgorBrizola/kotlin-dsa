@@ -39,18 +39,25 @@ class SolutionsLeetCodes {
     }
 
     fun twoSum(numbers: IntArray, target: Int): IntArray {
-    val mapNumbers = mutableMapOf<Int, Int>()
+        var left = 0
+        var right = numbers.size - 1
+        val numbersSorted = numbers.sorted()
 
-        for ((index, number) in numbers.withIndex()) {
-            val complement = target - number
+        var targetIndex = intArrayOf()
 
-            if (mapNumbers.containsKey(complement))
-                return intArrayOf(mapNumbers[complement]!!, index)
-
-            mapNumbers[number] = index
+        for (i in 0 until numbersSorted.size - 1) {
+            if (numbersSorted[left] + numbersSorted[right] == target) {
+                targetIndex = intArrayOf(left, right)
+            } else if (numbersSorted[left] + numbersSorted[right] < target) {
+                left++
+            } else if (numbersSorted[left] + numbersSorted[right] > target) {
+                right--
+            } else {
+                throw IllegalArgumentException("Target not found!")
+            }
         }
 
-        throw IllegalArgumentException("Target not found!")
+        return targetIndex
     }
 }
 
