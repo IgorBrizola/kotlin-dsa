@@ -1,11 +1,11 @@
 package hackerRank
 
 import org.junit.jupiter.api.Test
-import kotlin.test.assertEquals
 
-class MainHackerRankTest {
+class DiagonalDifferenceTest {
+    private val diagonalDifferenceUseCase = DiagonalDifference()
 
-    private val hackerRank = SolutionsHackerRank()
+
 
     @Test
     fun `should calculate the absolute difference between the sums of its diagonals`() {
@@ -13,8 +13,8 @@ class MainHackerRankTest {
 
         val expected = 15
 
-        val result = hackerRank.diagonalDifference(squareMatrix)
+        val result = diagonalDifferenceUseCase.diagonalDifference(squareMatrix)
 
-        assertEquals(expected, result)
+        kotlin.test.assertEquals(expected, result)
     }
 }

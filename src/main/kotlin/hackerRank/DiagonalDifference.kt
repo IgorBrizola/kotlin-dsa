@@ -1,11 +1,10 @@
 package hackerRank
 
-import leetCodes.SolutionsLeetCodes
 import org.slf4j.LoggerFactory
 
-private val logger = LoggerFactory.getLogger(SolutionsHackerRank::class.java)
+private val log = LoggerFactory.getLogger(DiagonalDifference::class.java)
 
-class SolutionsHackerRank {
+class DiagonalDifference {
     fun diagonalDifference(arr: Array<Array<Int>>): Int {
         var j = 0
 
