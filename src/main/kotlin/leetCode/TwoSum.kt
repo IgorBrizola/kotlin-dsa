@@ -1,29 +1,33 @@
 package leetCode
 
 import org.slf4j.LoggerFactory
+import java.util.LinkedList
 
 private val log = LoggerFactory.getLogger(TwoSum::class.java)
 
 class TwoSum {
-    fun twoSumSorted(numbers: IntArray, target: Int): IntArray {
+    fun twoSumSorted(nums: IntArray, target: Int): IntArray {
         var left = 0
-        var right = numbers.size - 1
+        var right = nums.size - 1
 
-        var targetIndex = intArrayOf()
+        val numsMap = hashMapOf<Int, Int>()
 
-        for (i in 0 until numbers.size - 1) {
-            if (numbers[left] + numbers[right] == target) {
-                targetIndex = intArrayOf(left, right)
-            } else if (numbers[left] + numbers[right] < target) {
-                left++
-            } else if (numbers[left] + numbers[right] > target) {
-                right--
-            } else {
-                throw IllegalArgumentException("No valid solution found.")
-            }
+        while (left <= right) {
+            val complementLeft = target - nums[left]
+
+            if (numsMap.containsKey(complementLeft)) return intArrayOf(left, numsMap[complementLeft]!!)
+
+            numsMap[nums[left]] = left
+            left++
+
+            val complementRight = target - nums[right]
+
+            if (numsMap.containsKey(complementRight)) return intArrayOf(numsMap[complementRight]!! , right)
+
+            numsMap[nums[right]] = right
+            right--
         }
-
-        return targetIndex
+        return intArrayOf(0)
     }
 
     fun twoSumUnsorted(nums: IntArray, target: Int): IntArray {
@@ -39,7 +43,6 @@ class TwoSum {
 
             map[num] = index
         }
-
         throw IllegalArgumentException("No valid solution found.")
     }
 }
