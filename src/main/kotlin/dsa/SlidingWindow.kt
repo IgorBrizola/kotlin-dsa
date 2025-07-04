@@ -15,7 +15,7 @@ class SlidingWindow {
 
         val counter = hashMapOf<Char, Int>()
 
-        while (right <= s.length -1) {
+        while (right <= s.length - 1) {
             counter[s[right]] = (counter[s[right]] ?: 0) + 1
             while ((counter[s[right]] ?: 0) > 2) {
                 counter[s[left]] = (counter[s[left]] ?: 0) - 1
@@ -25,5 +25,20 @@ class SlidingWindow {
             right++
         }
         return subStringSize
+    }
+
+    fun containsNearbyDuplicate(nums: IntArray, k: Int): Boolean {
+        val hashMap = hashMapOf<Int, Int>()
+
+        for (i in nums.indices) {
+            val num = nums[i]
+            if (hashMap.containsKey(num)) {
+                val lastIndex = hashMap[num]!!
+                if (i - lastIndex <= k) return true
+            }
+            hashMap[num] = i
+        }
+
+        return false
     }
 }
