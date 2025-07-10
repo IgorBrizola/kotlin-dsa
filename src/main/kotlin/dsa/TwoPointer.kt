@@ -10,7 +10,7 @@ class TwoPointer {
         var left = 0
         var right = arr.size -1
 
-        while (left < right) {
+        while (left <= right) {
             if (arr[left] == target) return left
             if (arr[right] == target) return right
             left++

@@ -10,7 +10,7 @@ class TwoPointerTest {
     @Test
     fun`should return index of the target`() {
         val target = 6
-        val expectedIndex = 6
+        val expectedIndex = 5
 
         val arr = (1..10).toList().toIntArray()
 

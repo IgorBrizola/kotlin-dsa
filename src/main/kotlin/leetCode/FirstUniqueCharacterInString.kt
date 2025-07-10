@@ -26,7 +26,7 @@ class FirstUniqueCharacterInString {
 
     fun findUniqueCharacterWithAlphabet(s: String): Int {
         val uniqueChars = IntArray(26)
-        var arr = s.toCharArray()
+        var arr =  s.lowercase().toCharArray()
 
         for (i in arr.indices) {
             uniqueChars[arr[i] - 'a']++
