@@ -42,4 +42,23 @@ class HashMapTest{
         assertArrayEquals(expected, result)
     }
 
+
+    @Test
+    fun `should return true if not contains duplicate`() {
+        val nums = intArrayOf(1,2,3,4,5)
+
+        val result = hashMapUseCase.containsDuplicate(nums)
+
+        assertFalse { result }
+    }
+
+    @Test
+    fun `should return false if contains duplicate`() {
+        val nums = intArrayOf(1,2,3,4,1)
+
+        val result = hashMapUseCase.containsDuplicate(nums)
+
+        assertTrue { result }
+    }
+
 }

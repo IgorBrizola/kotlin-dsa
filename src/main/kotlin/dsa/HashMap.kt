@@ -14,4 +14,17 @@ class HashMap {
 
         return intArrayOf(-1)
     }
+
+    fun containsDuplicate(nums: IntArray): Boolean {
+        val hashMap = hashMapOf<Int, Int>()
+
+        for (i in nums) {
+            if (hashMap.containsKey(i)) {
+                return true
+            }
+            hashMap[i] = 1
+        }
+
+        return false
+    }
 }
