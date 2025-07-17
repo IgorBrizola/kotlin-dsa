@@ -1,8 +1,10 @@
-name: Maven Package
+name: CI/CD | Checkout & Build 
 
 on:
-  release:
-    types: [push, created]
+ pull_request:
+  types: [ opened, synchronize, reopened, labeled ]
+  branches:
+    - main
 
 jobs:
   build:
