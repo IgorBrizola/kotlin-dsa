@@ -57,7 +57,7 @@ class BinarySearchTest{
         val target = 70
         val expectedIndex = 69
 
-        val arr = (1..1000).toList().toIntArray()
+        val arr = (1..10000).toList().toIntArray()
 
         val result = binarySearchUseCase.binarySearch(arr, target)
 
