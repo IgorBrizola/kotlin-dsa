@@ -51,4 +51,16 @@ class BinarySearchTest{
         val expectedSteps = 76
         assertEquals(expectedSteps, result)
     }
+
+    @Test
+    fun`should return index of the target game`() {
+        val target = 70
+        val expectedIndex = 69
+
+        val arr = (1..1000).toList().toIntArray()
+
+        val result = binarySearchUseCase.binarySearch(arr, target)
+
+        assertEquals(expectedIndex, result)
+    }
 }

@@ -17,6 +17,5 @@ class TwoPointerTest {
         val result = twoPointerUseCase.twoPointers(arr, target)
 
         assertEquals(expectedIndex, result)
-
     }
 }
