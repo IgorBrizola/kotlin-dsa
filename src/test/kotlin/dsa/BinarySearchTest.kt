@@ -55,7 +55,7 @@ class BinarySearchTest{
     @Test
     fun`should return index of the target game`() {
         val target = 70
-        val expectedIndex = 9
+        val expectedIndex = 69
 
         val arr = (1..10000).toList().toIntArray()
 
